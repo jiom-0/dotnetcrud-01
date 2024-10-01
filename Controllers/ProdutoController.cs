@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using System.Reflection;
-using Host.Models;
-
 [ApiController]
 // [Route("api/[controller]")]
 [Route("api/produto")]

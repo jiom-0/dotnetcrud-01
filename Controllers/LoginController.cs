@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using Host.Models;
 using System.Runtime.InteropServices;
 using Microsoft.Extensions.Configuration;
 

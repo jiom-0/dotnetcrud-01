@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Host.Models;
-
 public partial class Produto
 {
     public int Id { get; set; }
