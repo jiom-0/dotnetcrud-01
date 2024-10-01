@@ -33,7 +33,7 @@ namespace Host.Migrations
                 column: "email",
                 unique: true);
 
-            migrationBuilder.Sql("INSERT INTO Users (Email, PasswordHash) VALUES ('teste@email.com', 'senha123')");
+            migrationBuilder.Sql("INSERT INTO usuario (email, passwd, nome, permission) VALUES ('teste@email.com', 'senha123', 'teste', 'Admin')");
         }
 
         /// <inheritdoc />
