@@ -1,4 +1,3 @@
-using Host;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
@@ -8,6 +7,11 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 var DBConfiguration = builder.Configuration;
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+builder.WebHost.UseUrls("http://*:5000");
+builder.WebHost.UseKestrel(options =>
+{
+    options.ListenAnyIP(5000); // Escuta em qualquer IP na porta 5000
+});
 
 builder.Services.AddAuthentication(options =>{
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -92,7 +96,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseSession();
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseRouting();
 app.UseCors("AllowAllOrigins");

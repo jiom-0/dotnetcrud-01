@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Host.Migrations
 {
     [DbContext(typeof(NgdotnetcrudContext))]
-    [Migration("20241001021328_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241003073423_DayZero")]
+    partial class DayZero
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

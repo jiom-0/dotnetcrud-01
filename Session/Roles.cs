@@ -23,4 +23,11 @@ public class Roles{
 
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
+
+    public static string ValidaCamposProduto(Produto produto){
+        if(produto.Preco < 0) return "Preço do produto não pode ser menor que zero";
+        if(produto.SldAtual < 0) return "Quantidade atual não pode ser menor que zero";
+        if(string.IsNullOrWhiteSpace(produto.Nome)) return "Nome do produto não pode ser nulo";
+        return "";
+    }
 }
