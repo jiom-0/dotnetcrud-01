@@ -7,7 +7,7 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 var DBConfiguration = builder.Configuration;
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
-int port = 5000
+int port = 5000;
 builder.WebHost.UseKestrel(options =>
 {
     options.ListenAnyIP(port);
