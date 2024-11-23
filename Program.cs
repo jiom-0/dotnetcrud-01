@@ -7,8 +7,7 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 var DBConfiguration = builder.Configuration;
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
-int port = Int32.Parse(Environment.GetEnvironmentVariable("PORT") ?? "5000");
-builder.WebHost.UseUrls($"http://*:{port}");
+int port = int.Parse(Environment.GetEnvironmentVariable("PORT") ?? "5000");
 builder.WebHost.UseKestrel(options =>
 {
     options.ListenAnyIP(port); // Escuta em qualquer IP na porta 5000
