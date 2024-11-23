@@ -7,10 +7,11 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 var DBConfiguration = builder.Configuration;
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
-builder.WebHost.UseUrls("http://*:5000");
+int port = Int32.Parse(Environment.GetEnvironmentVariable("PORT") ?? "5000");
+builder.WebHost.UseUrls($"http://*:{port}");
 builder.WebHost.UseKestrel(options =>
 {
-    options.ListenAnyIP(5000); // Escuta em qualquer IP na porta 5000
+    options.ListenAnyIP(port); // Escuta em qualquer IP na porta 5000
 });
 
 builder.Services.AddAuthentication(options =>{
